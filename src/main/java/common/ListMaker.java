@@ -1,9 +1,10 @@
 package common;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class PersonMaker {
+public class ListMaker {
 	public static List<Person> createPersons() {
 		final List<Person> persons = new ArrayList<>();
 
@@ -32,5 +33,9 @@ public class PersonMaker {
 		persons.add(person4);
 
 		return persons;
+	}
+
+	public static List<Integer> createNumbers() {
+		return Arrays.asList(new Integer[] { 1, 2, 3, 4, 5 });
 	}
 }

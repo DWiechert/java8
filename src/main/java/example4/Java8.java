@@ -17,6 +17,8 @@ public class Java8 {
         final List<Person> persons = ListMaker.createPersons();
         persons.addAll(ListMaker.createPersons2());
 
+        // This is a lambda expression for the interface of Comparator.
+        // It is in the form of (argument list) -> body
         final Comparator<Person> byEmail = (p1, p2) -> p1.getEmail().compareTo(p2.getEmail());
         Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getSex).thenComparing(byEmail));
         persons.forEach(p -> System.out.println(p));

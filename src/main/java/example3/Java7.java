@@ -1,5 +1,6 @@
 package example3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import common.ListMaker;
@@ -14,8 +15,12 @@ public class Java7 {
     public static void main(final String[] args) {
         final List<Person> persons = ListMaker.createPersons();
 
+        final List<Integer> nameLengths = new ArrayList<>(persons.size());
         for (final Person person : persons) {
-            System.out.println(person.getName().length());
+            nameLengths.add(person.getName().length());
+        }
+        for (final int length : nameLengths) {
+            System.out.println(length);
         }
     }
 }

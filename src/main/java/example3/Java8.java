@@ -11,10 +11,9 @@ import common.Person;
  * @author Dan Wiechert
  */
 public class Java8 {
-	public static void main(final String[] args) {
-		final List<Person> persons = ListMaker.createPersons();
+    public static void main(final String[] args) {
+        final List<Person> persons = ListMaker.createPersons();
 
-		persons.stream().map(p -> p.getName()).map(n -> n.length())
-				.forEach(nl -> System.out.println(nl));
-	}
+        persons.stream().map(p -> p.getName()).map(n -> n.length()).forEach(nl -> System.out.println(nl));
+    }
 }

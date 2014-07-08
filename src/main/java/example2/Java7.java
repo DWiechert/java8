@@ -10,12 +10,12 @@ import common.ListMaker;
  * @author Dan Wiechert
  */
 public class Java7 {
-	public static void main(final String[] args) {
-		final List<Integer> numbers = ListMaker.createNumbers();
-		int sum = 0;
-		for (final Integer number : numbers) {
-			sum += number.intValue();
-		}
-		System.out.println(sum);
-	}
+    public static void main(final String[] args) {
+        final List<Integer> numbers = ListMaker.createNumbers();
+        int sum = 0;
+        for (final Integer number : numbers) {
+            sum += number.intValue();
+        }
+        System.out.println(sum);
+    }
 }

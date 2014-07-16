@@ -2,19 +2,19 @@ package example2;
 
 import java.util.List;
 
+import common.Person;
 import common.ListMaker;
 
 /**
- * Shows adding numbers the java 8 way.
+ * Shows filtering the java 8 way.
  * 
  * @author Dan Wiechert
  */
 public class Java8 {
     public static void main(final String[] args) {
-        final List<Integer> numbers = ListMaker.createNumbers();
+        final List<Person> persons = ListMaker.createPersons();
 
-        // We're calling reduce over the list with an initial value of 0 and then add '+' the rest of the numbers.
-        final int sum = numbers.stream().reduce(0, (n1, n2) -> n1 + n2);
-        System.out.println(sum);
+        // First we're filtering out only the persons with a Sex of MALE, and then printing their names
+        persons.stream().filter(p -> p.getSex() == Person.Sex.MALE).forEach(p -> System.out.println(p.getName()));
     }
 }

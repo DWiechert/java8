@@ -2,20 +2,22 @@ package example2;
 
 import java.util.List;
 
+import common.Person;
 import common.ListMaker;
 
 /**
- * Shows adding numbers the java 7 way.
+ * Shows filtering the java 7 way.
  * 
  * @author Dan Wiechert
  */
 public class Java7 {
     public static void main(final String[] args) {
-        final List<Integer> numbers = ListMaker.createNumbers();
-        int sum = 0;
-        for (final Integer number : numbers) {
-            sum += number.intValue();
+        final List<Person> persons = ListMaker.createPersons();
+
+        for (final Person person : persons) {
+            if (person.getSex() == Person.Sex.MALE) {
+                System.out.println(person.getName());
+            }
         }
-        System.out.println(sum);
     }
 }

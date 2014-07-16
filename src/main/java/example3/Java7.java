@@ -1,26 +1,21 @@
 package example3;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import common.ListMaker;
-import common.Person;
 
 /**
- * Shows mapping the java 7 way.
+ * Shows adding numbers the java 7 way.
  * 
  * @author Dan Wiechert
  */
 public class Java7 {
     public static void main(final String[] args) {
-        final List<Person> persons = ListMaker.createPersons();
-
-        final List<Integer> nameLengths = new ArrayList<>(persons.size());
-        for (final Person person : persons) {
-            nameLengths.add(person.getName().length());
+        final List<Integer> numbers = ListMaker.createNumbers();
+        int sum = 0;
+        for (final Integer number : numbers) {
+            sum += number.intValue();
         }
-        for (final int length : nameLengths) {
-            System.out.println(length);
-        }
+        System.out.println(sum);
     }
 }

@@ -9,7 +9,7 @@ import common.Person;
 
 /**
  * Shows comparing the java 8 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java8 {

@@ -2,12 +2,12 @@ package example2;
 
 import java.util.List;
 
-import common.Person;
 import common.ListMaker;
+import common.Person;
 
 /**
  * Shows filtering the java 8 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java8 {

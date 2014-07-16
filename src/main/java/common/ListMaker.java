@@ -34,6 +34,7 @@ public class ListMaker {
 
         return persons;
     }
+
     public static List<Person> createPersons2() {
         final List<Person> persons = new ArrayList<>();
 

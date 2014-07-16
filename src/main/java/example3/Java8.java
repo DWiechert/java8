@@ -6,7 +6,7 @@ import common.ListMaker;
 
 /**
  * Shows adding numbers the java 8 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java8 {

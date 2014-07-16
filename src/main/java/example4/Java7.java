@@ -8,7 +8,7 @@ import common.Person;
 
 /**
  * Shows mapping the java 7 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java7 {

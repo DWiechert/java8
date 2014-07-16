@@ -20,7 +20,7 @@ public class Person {
      * @param name
      *            the name to set
      */
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -35,7 +35,7 @@ public class Person {
      * @param sex
      *            the sex to set
      */
-    public void setSex(Sex sex) {
+    public void setSex(final Sex sex) {
         this.sex = sex;
     }
 
@@ -50,7 +50,7 @@ public class Person {
      * @param email
      *            the email to set
      */
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 

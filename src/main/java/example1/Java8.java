@@ -7,7 +7,7 @@ import common.Person;
 
 /**
  * Shows how to implement interfaces the java 8 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java8 {

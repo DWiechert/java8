@@ -9,7 +9,7 @@ import common.Person;
 
 /**
  * Shows comparing the java 7 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java7 {
@@ -18,7 +18,7 @@ public class Java7 {
         persons.addAll(ListMaker.createPersons2());
 
         Collections.sort(persons, new PersonComparator());
-        
+
         for (final Person person : persons) {
             System.out.println(person);
         }
@@ -34,12 +34,12 @@ public class Java7 {
             if (nameCompare != 0) {
                 return nameCompare;
             }
-            
+
             final int sexCompare = p1.getSex().compareTo(p2.getSex());
             if (sexCompare != 0) {
                 return sexCompare;
             }
-            
+
             return p1.getEmail().compareTo(p2.getEmail());
         }
     }

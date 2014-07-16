@@ -6,7 +6,7 @@ import common.ListMaker;
 
 /**
  * Shows adding numbers the java 7 way.
- * 
+ *
  * @author Dan Wiechert
  */
 public class Java7 {

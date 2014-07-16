@@ -1,28 +1,38 @@
 package example5;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import common.ListMaker;
 import common.Person;
 
 /**
- * Shows comparing the java 8 way.
- *
+ * Shows collecting the java 8 way.
+ * 
  * @author Dan Wiechert
  */
 public class Java8 {
     public static void main(final String[] args) {
         final List<Person> persons = ListMaker.createPersons();
-        persons.addAll(ListMaker.createPersons2());
+        
+        // Collecting the names of the persons into a list
+        final List<String> names = persons.stream().map(p -> p.getName()).collect(Collectors.toList());
+        names.forEach(n -> System.out.println(n));
+        
+        // Collecting the names into a string joined by ','
+        System.out.println();
+        final String joinedNames = names.stream().collect(Collectors.joining(","));
+        System.out.println(joinedNames);
 
-        // This is a lambda expression for the interface of Comparator.
-        // It is in the form of (argument list) -> body
-        final Comparator<Person> byEmail = (p1, p2) -> p1.getEmail().compareTo(p2.getEmail());
-        // Sorting the list of persons by their name, then their sex, and then finally by email.
-        // The 'Class::fieldMethod' notation is a new way to indicate what field of the class you want to use for comparing.
-        Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getSex).thenComparing(byEmail));
-        persons.forEach(p -> System.out.println(p));
+        // Grouping the persons into a map based on their sex
+        System.out.println();
+        final Map<Person.Sex, List<Person>> sexGroups = persons.stream().collect(Collectors.groupingBy(Person::getSex));
+        sexGroups.forEach((s, list) -> System.out.println("Sex: " + s + "\tPersons: " + list));
+        
+        // Partitioning the persons based on if their names starts with 'P'
+        System.out.println();
+        final Map<Boolean, List<Person>> namePartitions = persons.stream().collect(Collectors.partitioningBy(p -> p.getName().startsWith("P")));
+        namePartitions.forEach((n, list) -> System.out.println("Name starts with 'P': " + n + "\tPersons: " + list));
     }
 }

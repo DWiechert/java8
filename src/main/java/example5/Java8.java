@@ -17,6 +17,7 @@ public class Java8 {
         final List<Person> persons = ListMaker.createPersons();
         
         // Collecting the names of the persons into a list
+        // Could also do a specific type of list with .collect(Collectors.toCollection(LinkedList::new));
         final List<String> names = persons.stream().map(p -> p.getName()).collect(Collectors.toList());
         names.forEach(n -> System.out.println(n));
         
